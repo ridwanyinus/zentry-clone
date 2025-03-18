@@ -1,8 +1,17 @@
-# React + Vite
+# Zentry Homepage Hybrid Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zentry is the metagame—a unified play layer that bridges players, agentic AI, and blockchains, opening a new world of AI-driven gamification and a cross-sector data economy. This project is a hybrid clone of the Zentry homepage, inspired by [Zentry](https://zentry.com). The goal of this project is to enhance my skills in creating animations and stunning visuals using modern web technologies.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a clone of the Zentry homepage, created to practice and improve my skills in front-end development, particularly in animation and visual design. It replicates the design and functionality of the original site while incorporating my own implementation.
+
+## Credits
+
+All design elements, images, and videos used in this project are sourced from the official [Zentry website](https://zentry.com). This project is for educational and personal practice purposes only.
+
+## Tech Stack
+
+- **React**: A JavaScript library for building user interfaces.
+- **GSAP (GreenSock Animation Platform)**: A powerful JavaScript library for high-performance animations.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
