@@ -8,10 +8,10 @@ This project is a clone of the Zentry homepage, created to practice and improve 
 
 ## Credits
 
-All design elements, images, and videos used in this project are sourced from the official [Zentry website](https://zentry.com). This project is for educational and personal practice purposes only.
+Some design elements, images, and videos used in this project are sourced from the official [Zentry website](https://zentry.com). This project is for educational and personal practice purposes only.
 
 ## Tech Stack
 
-- **React**: A JavaScript library for building user interfaces.
+- **React**
 - **GSAP (GreenSock Animation Platform)**: A powerful JavaScript library for high-performance animations.
-- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
+- **Tailwind CSS**
