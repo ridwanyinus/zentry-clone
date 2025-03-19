@@ -4,6 +4,7 @@ import { TiLocationArrow } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import VideoPreview from './VideoPreview';
+import Loader from './Loader';
 
 import { ScrollTrigger } from 'gsap/all';
 
@@ -13,6 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 /* TODO: turn the video trailers into two div instead of three div
   one for current video, one for next video; video frame/preview serve as the next video trailer
 */
+// TODO: change loader and bg and use supspense
+// TODO: move isLoading to another component
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
@@ -27,7 +30,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
+    if (loadedVideos >= totalVideos - 1) {
       setIsLoading(false);
     }
   }, [loadedVideos]);
@@ -93,15 +96,7 @@ const Hero = () => {
 
   return (
     <div className='relative h-dvh w-screen overflow-x-hidden'>
-      {isLoading && (
-        <div className='flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50'>
-          <div className='three-body'>
-            <div className='three-body__dot' />
-            <div className='three-body__dot' />
-            <div className='three-body__dot' />
-          </div>
-        </div>
-      )}
+      {isLoading && <Loader />}
 
       <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
         <div>
@@ -109,6 +104,7 @@ const Hero = () => {
             <VideoPreview>
               <div onClick={handleMiniVDClick} className='origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100 '>
                 <video
+                  playsInline
                   src={getVideoSrc(upComingVideoIndex)}
                   ref={nextVideoRef}
                   loop
@@ -123,6 +119,7 @@ const Hero = () => {
           </div>
 
           <video
+            playsInline
             ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
             loop
@@ -134,6 +131,7 @@ const Hero = () => {
           />
 
           <video
+            playsInline
             src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
             autoPlay
             loop
