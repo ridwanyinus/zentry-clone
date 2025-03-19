@@ -2,8 +2,7 @@ import { useRef, useState } from 'react';
 import { TiLocationArrow } from 'react-icons/ti';
 
 const BentoTilt = ({ children, className = '' }) => {
-  const [transformStyle, setTrasnsformStyle] = useState('');
-
+  const [transformStyle, setTransformStyle] = useState('');
   const tiltRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -11,23 +10,27 @@ const BentoTilt = ({ children, className = '' }) => {
 
     const { top, left, height, width } = tiltRef.current.getBoundingClientRect();
 
+    // Calculate relative cursor position
     const x = (e.clientX - left) / width;
     const y = (e.clientY - top) / height;
 
-    const xDeg = (x - 0.5) * 5;
-    const yDeg = (y - 0.5) * -5;
+    // Clamp x and y to prevent extreme values
+    const clampedX = Math.min(Math.max(x, 0.1), 0.9); // Clamp between 0.1 and 0.9
+    const clampedY = Math.min(Math.max(y, 0.1), 0.9); // Clamp between 0.1 and 0.9
 
+    // Calculate tilt degrees
+    const xDeg = (clampedX - 0.5) * 5; // Adjust multiplier for sensitivity
+    const yDeg = (clampedY - 0.5) * -5; // Adjust multiplier for sensitivity
+
+    // Apply transform
     const newTransform = `perspective(700px) rotateX(${yDeg}deg) rotateY(${xDeg}deg) scale3d(.95, .95, .95)`;
 
     tiltRef.current.style.cursor = 'grab';
-
-    // FIXME: fix the distotion of the card when the cursor is on the edge of the card
-
-    setTrasnsformStyle(newTransform);
+    setTransformStyle(newTransform);
   };
 
   const handleMouseLeave = () => {
-    setTrasnsformStyle('');
+    setTransformStyle('');
   };
 
   return (
@@ -43,7 +46,7 @@ const BentoCard = ({ src, title, desc }) => {
       <video src={src} autoPlay loop muted className='absolute left-0 top-0 size-full object-cover object-center' />
       <div className='relative z-10 flex size-full flex-col justify-center p-5 text-blue-50'>
         <div>
-          <h1 className='bento-title special-font '>{title}</h1>
+          <h1 className='bento-title special-font'>{title}</h1>
           {desc && <p className='mt-3 max-w-64 text-xs md:text-base'>{desc}</p>}
         </div>
       </div>
@@ -57,8 +60,8 @@ const Features = () => {
       <div className='container mx-auto px-3 md:px-10'>
         <div className='px-5 py-32'>
           <p className='font-circular-web text-lg text-blue-50'>Into the Metagame Layer</p>
-          <p className='max-w-md font-circular-web text-lg text-blue-50/50 '>
-            Immerse yourself in a rich and ever-expanding universe where a vibrand array of products converge into an interconnected overlay experience on your world.
+          <p className='max-w-md font-circular-web text-lg text-blue-50/50'>
+            Immerse yourself in a rich and ever-expanding universe where a vibrant array of products converge into an interconnected overlay experience on your world.
           </p>
         </div>
 
