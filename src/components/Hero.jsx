@@ -33,6 +33,10 @@ const Hero = () => {
     if (loadedVideos >= totalVideos - 1) {
       setIsLoading(false);
     }
+
+    const timeout = setTimeout(() => setIsLoading(false), 5000); // Fallback timeout
+
+    return () => clearTimeout(timeout);
   }, [loadedVideos]);
 
   const upComingVideoIndex = (currentIndex % totalVideos) + 1;
