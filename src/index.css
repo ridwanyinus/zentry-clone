@@ -290,12 +290,3 @@ body {
     opacity: 1;
   }
 }
-
-.loader {
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
-}
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
