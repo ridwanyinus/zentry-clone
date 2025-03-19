@@ -98,6 +98,18 @@ const Hero = () => {
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isLoading]);
+
   return (
     <div className='relative h-dvh w-screen overflow-x-hidden'>
       {isLoading && <Loader />}
