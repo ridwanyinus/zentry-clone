@@ -81,21 +81,19 @@ const Hero = () => {
       borderRadius: '0% 0% 40% 10%',
     });
 
-    if (window.innerWidth > 1024) {
-      gsap.from('#video-frame', {
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        borderRadius: '0% 0% 0% 0%',
+    gsap.from('#video-frame', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      borderRadius: '0% 0% 0% 0%',
 
-        ease: 'power1.inOut',
+      ease: 'power1.inOut',
 
-        scrollTrigger: {
-          trigger: '#video-frame',
-          start: 'center center',
-          end: 'bottom center',
-          scrub: true,
-        },
-      });
-    }
+      scrollTrigger: {
+        trigger: '#video-frame',
+        start: 'center center',
+        end: 'bottom center',
+        scrub: true,
+      },
+    });
   });
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
