@@ -34,7 +34,7 @@ const Hero = () => {
       setIsLoading(false);
     }
 
-    const timeout = setTimeout(() => setIsLoading(false), 5000); // Fallback timeout
+    const timeout = setTimeout(() => setIsLoading(false), 2000);
 
     return () => clearTimeout(timeout);
   }, [loadedVideos]);
@@ -98,22 +98,9 @@ const Hero = () => {
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isLoading]);
-
   return (
     <div className='relative h-dvh w-screen overflow-x-hidden'>
-      {isLoading && <Loader />}
-
+      <Loader isLoading={isLoading} />
       <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
         <div>
           <div className='mask-clip-path absolute-center absolute z-50 size-56 cursor-pointer overflow-hidden rounded-lg'>
