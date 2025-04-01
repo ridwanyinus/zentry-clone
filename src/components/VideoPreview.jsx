@@ -22,6 +22,7 @@ export const VideoPreview = ({ children }) => {
         transformPerspective: 500,
         duration: 1,
         ease: 'power1.out',
+        borderRadius: '0.5rem',
       });
 
       gsap.to(contentRef.current, {
@@ -29,6 +30,7 @@ export const VideoPreview = ({ children }) => {
         y: -yOffset,
         duration: 1,
         ease: 'power1.out',
+        borderRadius: '0.5rem',
       });
     }
   };
@@ -49,6 +51,7 @@ export const VideoPreview = ({ children }) => {
         y: 0,
         duration: 1,
         ease: 'power1.out',
+        borderRadius: '0.5rem',
       });
     }
   }, [isHovering]);
