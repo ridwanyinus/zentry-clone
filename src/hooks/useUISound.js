@@ -7,52 +7,52 @@ import { useRef, useCallback, useEffect } from 'react';
  */
 
 const useUISound = (soundUrl) => {
-  const soundRef = useRef(null);
+	const soundRef = useRef(null);
 
-  // Initialize audio on component mount
-  useEffect(() => {
-    if (soundUrl) {
-      soundRef.current = new Audio(soundUrl);
-    }
+	// Initialize audio on component mount
+	useEffect(() => {
+		if (soundUrl) {
+			soundRef.current = new Audio(soundUrl);
+		}
 
-    // Cleanup on unmount
-    return () => {
-      if (soundRef.current) {
-        soundRef.current.pause();
-        soundRef.current = null;
-      }
-    };
-  }, [soundUrl]);
+		// Cleanup on unmount
+		return () => {
+			if (soundRef.current) {
+				soundRef.current.pause();
+				soundRef.current = null;
+			}
+		};
+	}, [soundUrl]);
 
-  // Play sound function
-  const play = useCallback(() => {
-    const sound = soundRef.current;
+	// Play sound function
+	const play = useCallback(() => {
+		const sound = soundRef.current;
 
-    // Return early if sound isn't available or global setting is disabled
-    if (!sound || !window.isAudioEnabled) return;
+		// Return early if sound isn't available or global setting is disabled
+		if (!sound || !window.isAudioEnabled) return;
 
-    // Reset sound to beginning
-    sound.currentTime = 0;
+		// Reset sound to beginning
+		sound.currentTime = 0;
 
-    // Play the sound
-    const playPromise = sound.play();
+		// Play the sound
+		const playPromise = sound.play();
 
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          // Stop after 1 second
-          setTimeout(() => {
-            sound.pause();
-            sound.currentTime = 0;
-          }, 1000);
-        })
-        .catch((error) => {
-          console.error('UI sound failed to play:', error);
-        });
-    }
-  }, []);
+		if (playPromise !== undefined) {
+			playPromise
+				.then(() => {
+					// Stop after 1 second
+					setTimeout(() => {
+						sound.pause();
+						sound.currentTime = 0;
+					}, 1000);
+				})
+				.catch((error) => {
+					console.error('UI sound failed to play:', error);
+				});
+		}
+	}, []);
 
-  return play;
+	return play;
 };
 
 export default useUISound;

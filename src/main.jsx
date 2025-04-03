@@ -5,9 +5,9 @@ import App from './App.jsx';
 import { AudioProvider } from './contexts/AudioContext';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <AudioProvider>
-      <App />
-    </AudioProvider>
-  </StrictMode>,
+	<StrictMode>
+		<AudioProvider>
+			<App />
+		</AudioProvider>
+	</StrictMode>,
 );
