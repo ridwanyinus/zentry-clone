@@ -1,5 +1,5 @@
 import { gsap } from 'gsap';
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const VideoPreview = ({ children }) => {
 	const [isHovering, setIsHovering] = useState(false);
@@ -55,7 +55,6 @@ export const VideoPreview = ({ children }) => {
 			});
 		}
 	}, [isHovering]);
-	// FIXME: the video preview is removing rounded-lg class on hover
 	return (
 		<section
 			ref={sectionRef}

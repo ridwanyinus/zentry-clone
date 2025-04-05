@@ -155,7 +155,6 @@ const Hero = () => {
 			height: pos.height,
 			opacity: 1,
 			scale: 1,
-			borderRadius: '0.5rem',
 			xPercent: 0,
 			yPercent: 0,
 			zIndex: 30,
@@ -264,7 +263,7 @@ const Hero = () => {
 											handleMiniVDClick();
 										}
 									}}
-									className="preview-video origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100 cursor-pointer"
+									className="preview-video origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100 cursor-pointer rounded-lg"
 								>
 									<video
 										playsInline
