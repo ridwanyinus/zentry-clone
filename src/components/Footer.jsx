@@ -49,7 +49,7 @@ const Footer = () => {
 				>
 					Zentry.com
 				</a>{' '}
-				<br className="md:hidden" /> Images and videos belong to them.
+				<br className="md:hidden" /> Images, Audios & videos belong to them.
 			</p>
 		</footer>
 	);
