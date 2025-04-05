@@ -15,16 +15,13 @@ const BentoTilt = ({ children, className = '' }) => {
 		const x = (e.clientX - left) / width;
 		const y = (e.clientY - top) / height;
 
-		// Clamp x and y to prevent extreme values
-		const clampedX = Math.min(Math.max(x, 0.1), 0.9); // Clamp between 0.1 and 0.9
-		const clampedY = Math.min(Math.max(y, 0.1), 0.9); // Clamp between 0.1 and 0.9
+		// Apply the working logic: swap X and Y for rotations
+		// Use y position for X rotation and x position for Y rotation
+		const xDeg = (y - 0.5) * 5; // Using y for X rotation
+		const yDeg = (x - 0.5) * -5; // Using x for Y rotation
 
-		// Calculate tilt degrees
-		const xDeg = (clampedX - 0.5) * 5; // Adjust multiplier for sensitivity
-		const yDeg = (clampedY - 0.5) * -5; // Adjust multiplier for sensitivity
-
-		// Apply transform
-		const newTransform = `perspective(700px) rotateX(${yDeg}deg) rotateY(${xDeg}deg) scale3d(.95, .95, .95)`;
+		// Apply transform with slightly larger scale like the working code
+		const newTransform = `perspective(700px) rotateX(${xDeg}deg) rotateY(${yDeg}deg) scale3d(0.98, 0.98, 0.98)`;
 
 		tiltRef.current.style.cursor = 'grab';
 		setTransformStyle(newTransform);
