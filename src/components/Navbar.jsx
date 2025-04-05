@@ -159,7 +159,7 @@ const Navbar = () => {
 	const handleNavItemClick = useCallback(
 		(event, link) => {
 			playHoverSound();
-
+			toggleAudio();
 			if (link.startsWith('#')) {
 				event.preventDefault();
 				const element = document.querySelector(link);

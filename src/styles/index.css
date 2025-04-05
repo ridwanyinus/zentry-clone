@@ -1,70 +1,70 @@
-@import url("https://fonts.cdnfonts.com/css/general-sans");
-@import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/general-sans');
+@import 'tailwindcss';
 
 @theme {
-	--font-circular-web: "circular-web", sans-serif;
-	--font-general: "general", sans-serif;
-	--font-robert-medium: "robert-medium", sans-serif;
-	--font-robert-regular: "robert-regular", sans-serif;
-	--font-zentry: "zentry", sans-serif;
-	--color-blue-50: #dfdfdf;
-	--color-blue-75: #dfdff2;
-	--color-blue-100: #f0f2fa;
-	--color-blue-200: #010101;
-	--color-blue-300: #47b7dd;
-	--color-violet-300: #5724ff;
-	--color-yellow-100: #8e983f;
-	--color-yellow-300: #edff66;
+  --font-circular-web: 'circular-web', sans-serif;
+  --font-general: 'general', sans-serif;
+  --font-robert-medium: 'robert-medium', sans-serif;
+  --font-robert-regular: 'robert-regular', sans-serif;
+  --font-zentry: 'zentry', sans-serif;
+  --color-blue-50: #dfdfdf;
+  --color-blue-75: #dfdff2;
+  --color-blue-100: #f0f2fa;
+  --color-blue-200: #010101;
+  --color-blue-300: #47b7dd;
+  --color-violet-300: #5724ff;
+  --color-yellow-100: #8e983f;
+  --color-yellow-300: #edff66;
 }
 
 body {
-	font-family: "General Sans", sans-serif;
-	width: 100dvw;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	scroll-behavior: smooth;
-	background-color: #dfdff0;
+  font-family: 'General Sans', sans-serif;
+  width: 100dvw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #dfdff0;
 }
 
 @layer base {
-	@font-face {
-		font-family: "circular-web";
-		src: url("/fonts/circularweb-book.woff2") format("woff2");
-	}
+  @font-face {
+    font-family: 'circular-web';
+    src: url('/fonts/circularweb-book.woff2') format('woff2');
+  }
 
-	@font-face {
-		font-family: "general";
-		src: url("/fonts/general.woff2") format("woff2");
-	}
+  @font-face {
+    font-family: 'general';
+    src: url('/fonts/general.woff2') format('woff2');
+  }
 
-	@font-face {
-		font-family: "robert-medium";
-		src: url("/fonts/robert-medium.woff2") format("woff2");
-	}
+  @font-face {
+    font-family: 'robert-medium';
+    src: url('/fonts/robert-medium.woff2') format('woff2');
+  }
 
-	@font-face {
-		font-family: "robert-regular";
-		src: url("/fonts/robert-regular.woff2") format("woff2");
-	}
+  @font-face {
+    font-family: 'robert-regular';
+    src: url('/fonts/robert-regular.woff2') format('woff2');
+  }
 
-	@font-face {
-		font-family: "zentry";
-		src: url("/fonts/zentry-regular.woff2") format("woff2");
-	}
+  @font-face {
+    font-family: 'zentry';
+    src: url('/fonts/zentry-regular.woff2') format('woff2');
+  }
 }
 
 @utility border-hsla {
-	@apply border border-white/20;
+  @apply border border-white/20;
 }
 
 @utility nav-hover-btn {
-	@apply relative ms-3 2xl:ms-10 font-general 2xl:text-xs uppercase text-blue-50 cursor-pointer px-4 py-2 text-[0.625rem] transition-colors duration-300 ease-in-out z-10 hover:text-blue-200 font-bold flex items-center;
+  @apply relative ms-3 2xl:ms-10 font-general 2xl:text-xs uppercase text-blue-50 cursor-pointer px-4 py-2 text-[0.625rem] transition-colors duration-300 ease-in-out z-10 hover:text-blue-200 font-bold flex items-center;
 }
 
 @utility slide-nav {
-	@apply absolute inset-0 bg-violet-50 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.33,0.83,0.99,0.98)];
+  @apply absolute inset-0 bg-violet-50 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.33,0.83,0.99,0.98)];
 }
 
 /* another hover styles=>
@@ -81,124 +81,124 @@ body {
 } */
 
 @utility floating-nav {
-	@apply bg-black rounded-lg border;
+  @apply bg-black rounded-lg border;
 }
 
 @utility absolute-center {
-	@apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
 }
 
 @utility absolute-center-video {
-	@apply inset-0 flex items-center justify-center overflow-hidden;
+  @apply inset-0 flex items-center justify-center overflow-hidden;
 }
 
 @utility flex-center {
-	@apply flex justify-center items-center;
+  @apply flex justify-center items-center;
 }
 
 @utility mask-clip-path {
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .special-font b {
-	font-family: "Zentry" !important;
-	font-feature-settings: "ss01" on !important;
+  font-family: 'Zentry' !important;
+  font-feature-settings: 'ss01' on !important;
 }
 
 @utility hero-heading {
-	@apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[11rem];
+  @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[11rem];
 }
 
 @utility about-subtext {
-	@apply absolute bottom-[-90dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-sm md:max-w-[34rem];
+  @apply absolute bottom-[-90dvh] lg:bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-sm md:max-w-[34rem];
 }
 
 @utility about-image {
-	@apply absolute left-1/2 top-0 z-20 h-[60vh] xl:h-[70vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[25vw] border border-black/60;
+  @apply absolute left-1/2 top-0 z-20 h-[55vh] xl:h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[25vw] border border-black/60;
 }
 
 @utility animated-title {
-	@apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[5.5rem];
+  @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[5.5rem];
 }
 
 @utility animated-word {
-	@apply font-zentry font-black opacity-0;
-	transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
-	transform-origin: 50% 50% -150px !important;
-	will-change: opacity, transform;
+  @apply font-zentry font-black opacity-0;
+  transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+  transform-origin: 50% 50% -150px !important;
+  will-change: opacity, transform;
 }
 
 @utility bento-tilt_1 {
-	@apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+  @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
 }
 
 @utility bento-tilt_2 {
-	@apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+  @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
 }
 
 @utility bento-title {
-	@apply uppercase md:text-6xl text-4xl font-black font-zentry;
+  @apply uppercase md:text-6xl text-4xl font-black font-zentry;
 }
 
 @utility story-img-container {
-	@apply relative md:h-dvh h-[90vh] w-full;
-	filter: url("#flt_tag");
+  @apply relative md:h-dvh h-[90vh] w-full;
+  filter: url('#flt_tag');
 }
 
 @utility story-img-mask {
-	@apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
-	clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+  @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
+  clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
 }
 
 @utility story-img-content {
-	@apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
-	transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
+  @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
+  transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
 }
 
 @utility gallery-img-container {
-	@apply size-64 overflow-hidden bg-violet-300;
+  @apply size-64 overflow-hidden bg-violet-300;
 }
 
 @utility gallery-img {
-	@apply size-full bg-cover;
+  @apply size-full bg-cover;
 }
 
 @utility gallery-img-4 {
-	@apply sm:size-80 md:h-96 md:w-[25rem] rounded-lg;
+  @apply sm:size-80 md:h-96 md:w-[25rem] rounded-lg;
 }
 
 @utility sword-man-clip-path {
-	clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
+  clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
 }
 
 @utility contact-clip-path-1 {
-	clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
+  clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
 }
 
 @utility contact-clip-path-2 {
-	clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
+  clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
 }
 
 .indicator-line {
-	@apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
+  @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
 }
 
 .indicator-line.active {
-	animation: indicator-line 0.5s ease infinite;
-	animation-delay: calc(var(--animation-order) * 0.1s);
+  animation: indicator-line 0.5s ease infinite;
+  animation-delay: calc(var(--animation-order) * 0.1s);
 }
 
 @keyframes indicator-line {
-	0% {
-		height: 4px;
-		transform: translateY(-0px);
-	}
-	50% {
-		height: 16px;
-		transform: translateY(-4px);
-	}
-	100% {
-		height: 4px;
-		transform: translateY(-0px);
-	}
+  0% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
+  50% {
+    height: 16px;
+    transform: translateY(-4px);
+  }
+  100% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
 }
