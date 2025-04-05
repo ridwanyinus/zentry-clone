@@ -4,7 +4,7 @@ import Button from './Button';
 import RoundedCorners from './RoundedCorners';
 
 const Story = () => {
-	const { frameRef, handleMouseMove, handleMouseLeave } = use3DTilt();
+	const { frameRef, handleMouseLeave } = use3DTilt();
 
 	return (
 		<section id="story" className="min-h-dvh w-screen bg-black text-blue-50">
@@ -27,8 +27,6 @@ const Story = () => {
 									src="/img/entrance.webp"
 									alt="entrance"
 									className="object-contain"
-									onMouseMove={handleMouseMove}
-									onMouseLeave={handleMouseLeave}
 									onMouseUp={handleMouseLeave}
 									onMouseEnter={handleMouseLeave}
 								/>
